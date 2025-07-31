@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.controller.LoginController"
+            style="-fx-background-color: linear-gradient(to bottom right, #3c2a21, #1a120b);">
+
+   <!-- Coffee texture background -->
+   <ImageView fitHeight="350" fitWidth="350" opacity="0.05">
+      <image>
+         <Image url="@../images/coffee-texture.png"/>
+      </image>
+   </ImageView>
+
+   <!-- Coffee decorations -->
+   <ImageView fitHeight="120" fitWidth="120" layoutX="230" layoutY="10" opacity="0.08" preserveRatio="true">
+      <image>
+         <Image url="@../images/coffee-steam.png"/>
+      </image>
+   </ImageView>
+   <ImageView fitHeight="30" fitWidth="30" layoutX="280" layoutY="280" opacity="0.2" preserveRatio="true">
+      <image>
+         <Image url="@../images/coffee-bean.png"/>
+      </image>
+      <effect>
+         <Glow level="0.3"/>
+      </effect>
+   </ImageView>
+
+   <!-- Wooden frame -->
+   <Rectangle arcHeight="25" arcWidth="25" fill="transparent" height="310" layoutX="20" layoutY="20"
+              stroke="linear-gradient(to bottom, #8b5a2b, #5c4033)" strokeWidth="3" width="310"
+              strokeType="OUTSIDE" strokeLineJoin="ROUND">
+      <effect>
+         <InnerShadow color="#1a120b" radius="5" choke="0.5"/>
+      </effect>
+   </Rectangle>
+
+   <!-- Login title -->
+   <Label layoutX="115.0" layoutY="40.0" text="CAFÉ LOGIN" textFill="#e6c9a8">
+      <font>
+         <Font name="Palatino" size="24.0" />
+      </font>
+      <effect>
+         <DropShadow color="#1a120b" radius="5" offsetX="2" offsetY="2"/>
+         <Glow level="0.2"/>
+      </effect>
+   </Label>
+
+   <!-- Input fields with parchment effect -->
+   <TextField fx:id="txtUsername" layoutX="75.0" layoutY="100.0" promptText="Username"
+              style="-fx-background-color: #fffaf5; -fx-border-color: #8b5a2b; -fx-border-radius: 8;
+                     -fx-prompt-text-fill: #5c4033aa; -fx-background-radius: 8; -fx-font-size: 14;
+                     -fx-effect: dropshadow(gaussian, #1a120b55, 5, 0.2, 2, 2);"
+              prefWidth="200.0">
+      <font>
+         <Font name="Arial" />
+      </font>
+   </TextField>
+
+   <PasswordField fx:id="txtPassword" layoutX="75.0" layoutY="150.0" promptText="Password"
+                  style="-fx-background-color: #fffaf5; -fx-border-color: #8b5a2b; -fx-border-radius: 8;
+                         -fx-prompt-text-fill: #5c4033aa; -fx-background-radius: 8; -fx-font-size: 14;
+                         -fx-effect: dropshadow(gaussian, #1a120b55, 5, 0.2, 2, 2);"
+                  prefWidth="200.0">
+      <font>
+         <Font name="Arial" />
+      </font>
+   </PasswordField>
+
+   <!-- Coffee bean login button -->
+   <Button layoutX="140.0" layoutY="210.0" mnemonicParsing="false" onAction="#login"
+           prefHeight="40.0" prefWidth="70.0" text="Login"
+           style="-fx-background-color: radial-gradient(center 50% 50%, radius 60%, #a67c52, #5c4033);
+                  -fx-text-fill: #f8f1e5; -fx-font-weight: bold; -fx-background-radius: 20;
+                  -fx-font-size: 16; -fx-border-color: #d4a373; -fx-border-width: 1.5;
+                  -fx-border-radius: 20; -fx-cursor: hand;">
+      <effect>
+         <DropShadow color="#1a120b" radius="8" spread="0.3"/>
+         <InnerShadow color="#5c4033" radius="3" choke="0.5"/>
+      </effect>
+      <font>
+         <Font name="Palatino" />
+      </font>
+   </Button>
+
+   <!-- Status message -->
+   <Label fx:id="lblStatus" alignment="CENTER" layoutX="75.0" layoutY="260.0" prefHeight="30.0" prefWidth="200.0"
+          textFill="#d4a373" style="-fx-font-weight: bold; -fx-font-style: italic;">
+      <font>
+         <Font size="13.0" />
+      </font>
+      <effect>
+         <Glow level="0.4"/>
+      </effect>
+   </Label>
+
+   <!-- Coffee mug shadow -->
+   <Ellipse layoutX="175" layoutY="320" radiusX="40" radiusY="10" fill="#1a120b" opacity="0.3">
+      <effect>
+   <!--   <Blur radius="8"/>-->
+ </effect>
+</Ellipse>
+
+<!-- Coffee mug -->
+   <ImageView fitHeight="60" fitWidth="60" layoutX="145" layoutY="260" preserveRatio="true">
+      <image>
+         <Image url="@../images/coffee-mug.png"/>
+      </image>
+      <effect>
+         <DropShadow color="#1a120b" radius="5" offsetY="3"/>
+      </effect>
+   </ImageView>
+</AnchorPane>

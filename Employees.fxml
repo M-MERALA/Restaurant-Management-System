@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="250.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to bottom right, #3c2a21, #1a120b);" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EmployeesController">
+    <children>
+        <!-- Wooden panel background -->
+        <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#1a120b" height="240.0" layoutX="5.0" layoutY="5.0" stroke="#5c4033" strokeType="INSIDE" strokeWidth="2.0" width="290.0">
+            <effect>
+                <DropShadow color="#00000088" radius="10" />
+            </effect>
+        </Rectangle>
+
+        <!-- Title label -->
+        <Label layoutX="19.0" layoutY="14.0" text="Employees" style="-fx-text-fill: #e6d5b8;">
+            <font>
+                <Font size="18.0" />
+            </font>
+            <effect>
+                <DropShadow color="#1a120b" radius="3" />
+            </effect>
+        </Label>
+
+        <!-- Coffee-themed buttons -->
+        <Button layoutX="222.0" layoutY="56.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="62.0" text="Add"
+                style="-fx-background-color: radial-gradient(center 50% 50%, radius 60%, #d4a373, #a67c52); -fx-text-fill: #1a120b; -fx-font-weight: bold; -fx-background-radius: 5; -fx-border-color: #8b5a2b; -fx-border-width: 1; -fx-border-radius: 5;">
+            <effect>
+                <DropShadow color="#1a120b" radius="3" />
+            </effect>
+        </Button>
+
+        <Button layoutX="222.0" layoutY="91.0" mnemonicParsing="false" onAction="#confirmDelete" prefHeight="25.0" prefWidth="62.0" text="Delete"
+                style="-fx-background-color: radial-gradient(center 50% 50%, radius 60%, #5c4033, #3c2a21); -fx-text-fill: #e6c9a8; -fx-font-weight: bold; -fx-background-radius: 5; -fx-border-color: #d4a373; -fx-border-width: 1; -fx-border-radius: 5;">
+            <effect>
+                <DropShadow color="#1a120b" radius="3" />
+            </effect>
+        </Button>
+
+        <Button layoutX="222.0" layoutY="126.0" mnemonicParsing="false" onAction="#viewLog" text="View log"
+                style="-fx-background-color: radial-gradient(center 50% 50%, radius 60%, #a67c52, #8b5a2b); -fx-text-fill: #1a120b; -fx-font-weight: bold; -fx-background-radius: 5; -fx-border-color: #d4a373; -fx-border-width: 1; -fx-border-radius: 5;">
+            <effect>
+                <DropShadow color="#1a120b" radius="3" />
+            </effect>
+        </Button>
+
+        <Button layoutX="222.0" layoutY="222.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="62.0" text="Back"
+                style="-fx-background-color: radial-gradient(center 50% 50%, radius 60%, #8b5a2b, #5c4033); -fx-text-fill: #e6c9a8; -fx-font-weight: bold; -fx-background-radius: 5; -fx-border-color: #d4a373; -fx-border-width: 1; -fx-border-radius: 5;">
+            <effect>
+                <InnerShadow color="#1a120b" radius="3" />
+            </effect>
+        </Button>
+
+        <!-- Employees table styled like a coffee shop roster -->
+        <TableView fx:id="tblEmployees" layoutX="17.0" layoutY="56.0" prefHeight="191.0" prefWidth="190.0" style="-fx-base: #e6d5b8; -fx-control-inner-background: #e6d5b8; -fx-background-color: #e6d5b8; -fx-table-cell-border-color: #8b5a2b;">
+            <effect>
+                <DropShadow color="#1a120b88" radius="5" />
+            </effect>
+            <columns>
+                <TableColumn fx:id="colEmployeeID" prefWidth="23.0" text="ID" style="-fx-text-fill: #1a120b;" />
+                <TableColumn fx:id="colName" prefWidth="166.0" text="Name" style="-fx-text-fill: #1a120b;" />
+            </columns>
+        </TableView>
+
+        <!-- Add employee dialog styled like a coffee shop form -->
+        <DialogPane fx:id="dialogAdd" layoutX="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="250.0" visible="false" style="-fx-background-color: #e6d5b8; -fx-border-color: #8b5a2b; -fx-border-width: 2;">
+            <effect>
+                <DropShadow color="#1a120b88" radius="10" />
+            </effect>
+            <header>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="248.0" style="-fx-background-color: #e6d5b8;">
+                    <children>
+                        <TextField fx:id="txtFirstName" layoutX="51.0" layoutY="56.0" promptText="First name"
+                                   style="-fx-background-color: #f8f4e9; -fx-border-color: #8b5a2b; -fx-text-fill: #3c2a21; -fx-prompt-text-fill: #8b5a2b;"/>
+
+                        <TextField fx:id="txtLastName" layoutX="51.0" layoutY="90.0" promptText="Last name"
+                                   style="-fx-background-color: #f8f4e9; -fx-border-color: #8b5a2b; -fx-text-fill: #3c2a21; -fx-prompt-text-fill: #8b5a2b;"/>
+
+                        <TextField fx:id="txtUsername" layoutX="51.0" layoutY="125.0" promptText="Username"
+                                   style="-fx-background-color: #f8f4e9; -fx-border-color: #8b5a2b; -fx-text-fill: #3c2a21; -fx-prompt-text-fill: #8b5a2b;"/>
+
+                        <PasswordField fx:id="txtPassword" layoutX="51.0" layoutY="160.0" promptText="Password"
+                                       style="-fx-background-color: #f8f4e9; -fx-border-color: #8b5a2b; -fx-text-fill: #3c2a21; -fx-prompt-text-fill: #8b5a2b;"/>
+
+                        <PasswordField fx:id="txtConfirmPassword" layoutX="51.0" layoutY="194.0" promptText="Confirm password"
+                                       style="-fx-background-color: #f8f4e9; -fx-border-color: #8b5a2b; -fx-text-fill: #3c2a21; -fx-prompt-text-fill: #8b5a2b;"/>
+
+                        <Label fx:id="lblMessage" alignment="CENTER" layoutX="51.0" layoutY="25.0" prefHeight="17.0" prefWidth="148.0" text="Please fill out all fields"
+                               style="-fx-text-fill: #5c4033; -fx-font-weight: bold;"/>
+
+                        <Button layoutX="135.0" layoutY="230.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="25.0" prefWidth="65.0" text="OK"
+                                style="-fx-background-color: radial-gradient(center 50% 50%, radius 60%, #8b5a2b, #5c4033); -fx-text-fill: #e6c9a8; -fx-font-weight: bold; -fx-background-radius: 5; -fx-border-color: #d4a373; -fx-border-width: 1; -fx-border-radius: 5;">
+                            <effect>
+                                <InnerShadow color="#1a120b" radius="3" />
+                            </effect>
+                        </Button>
+
+                        <Button layoutX="51.0" layoutY="230.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="65.0" text="Cancel"
+                                style="-fx-background-color: radial-gradient(center 50% 50%, radius 60%, #a67c52, #8b5a2b); -fx-text-fill: #1a120b; -fx-font-weight: bold; -fx-background-radius: 5; -fx-border-color: #d4a373; -fx-border-width: 1; -fx-border-radius: 5;">
+                            <effect>
+                                <DropShadow color="#1a120b" radius="3" />
+                            </effect>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </header>
+        </DialogPane>
+    </children>
+</AnchorPane>

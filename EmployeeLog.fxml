@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(to bottom right, #3c2a21, #1a120b);" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.EmployeeLogController">
+   <children>
+      <!-- Wooden panel background -->
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#1a120b" height="390.0" layoutX="5.0" layoutY="5.0" stroke="#5c4033" strokeType="INSIDE" strokeWidth="2.0" width="490.0">
+         <effect>
+            <DropShadow color="#00000088" radius="10" />
+         </effect>
+      </Rectangle>
+
+      <!-- Title label with coffee-inspired styling -->
+      <Label layoutX="28.0" layoutY="26.0" text="Employee log" style="-fx-text-fill: #e6d5b8;">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <effect>
+            <DropShadow color="#1a120b" radius="3" />
+         </effect>
+      </Label>
+
+      <!-- Employee label with subtle coffee tone -->
+      <Label fx:id="lblEmployee" layoutX="28.0" layoutY="53.0" style="-fx-text-fill: #d4a373;" />
+
+      <!-- Text area styled like a coffee shop log book -->
+      <TextArea fx:id="txtLog" layoutX="28.0" layoutY="93.0" prefHeight="274.0" prefWidth="444.0"
+                style="-fx-background-color: #e6d5b8; -fx-border-color: #8b5a2b; -fx-text-fill: #3c2a21; -fx-control-inner-background: #e6d5b8; -fx-font-family: 'Monospaced';">
+         <effect>
+            <InnerShadow color="#8b5a2b33" radius="3" />
+         </effect>
+      </TextArea>
+   </children>
+</AnchorPane>
